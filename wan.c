@@ -10,37 +10,37 @@ int col;
 
 void setup()
 {
-	initscr();
-	raw();
-	noecho();
-	getmaxyx(stdscr,row,col);
+    initscr();
+    raw();
+    noecho();
+    getmaxyx(stdscr,row,col);
 }
 
 void teardown()
 {
-	endwin();
+    endwin();
 }
 
 void die(char* error)
 {
-	endwin();
-	printf("%s", error);
-	exit(1);
+    endwin();
+    printf("%s", error);
+    exit(1);
 }
 int main (int argc, char *argv[])
 {
-	setup();
+    setup();
 
-	printw("%d row\n%d col\n", row, col);
+    printw("%d row\n%d col\n", row, col);
 
     char ch = ' ';
-	while(ch != CTRLD)
-	{
-		ch = getch();
-		printw("%c: %d, ", ch, ch);
-		refresh();
-	}
+    while(ch != CTRLD)
+    {
+        ch = getch();
+        printw("%c: %d, ", ch, ch);
+        refresh();
+    }
 
-	teardown();
+    teardown();
 }
 
