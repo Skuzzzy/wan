@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc wan.c -lncursesw && ./a.out
+gcc wan.c -lncurses && ./a.out
